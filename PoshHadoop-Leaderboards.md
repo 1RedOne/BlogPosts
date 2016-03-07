@@ -6,7 +6,7 @@ If your name is in this list, I've received your code and will run it for the co
 | Martin Pugh | https://gist.github.com/martin9700/4c5a7dc448ee2cee7b59#file-get-hadoopchallenge-ps1 | TBD |  | |
 | IISResetMe  | https://gist.github.com/IISResetMe/1cb193f9473906d03277 | TBD |  |
 | kevin Markette | https://gist.github.com/KevinMarquette/f81b6f0a54c9df650c22 | TBD | |
-| David Kuehn | | TBD | |
+| David Kuehn | https://gist.github.com/DavidKuehn/d922a23f81fada9b411b | TBD | |
 | Irwin Strachan | https://gist.github.com/irwins/e5a579325e28d0070a7b#file-get-chessmatchesresults-ps1 | TBD | |
 | Craig Duff | https://gist.github.com/duffwv/eaf16d733fdb00e4d6e8#file-beatinghadoop-ps1 | TBD | |
 | Tore | https://gist.github.com/torgro/4b8aa80ad5b9b2da351b#file-get-chessscore-ps1 | TBD ||
