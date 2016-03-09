@@ -13,6 +13,5 @@ If your name is in this list, I've received your code and will run it for the co
 | /u/LogicalDiagram | https://gist.github.com/cdhunt/5c9a569aad952b1a4d96 | TBD ||
 | Boe Prox | https://gist.github.com/proxb/eba9b262e1dcb593ec94 | TBD ||
 | Flynn Bundy | https://gist.github.com/bundyfx/1ef0455eb9bcbcc2d627 | TBD ||
+| Øyvind Kallstad | https://gist.github.com/gravejester/6c9a1bdd12ba413590c9 | TBD ||
 
-
-https://gist.github.com/IISResetMe/1cb193f9473906d03277
