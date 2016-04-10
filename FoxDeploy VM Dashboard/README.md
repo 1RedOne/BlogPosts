@@ -1,5 +1,5 @@
-#Content here relates to the 'Building Better PowerShell Dashboards' post on FoxDeploy
-http://wp.me/p3Q7Nu-Qt
+#Content here relates to the [Building Better PowerShell Dashboards](http://wp.me/p3Q7Nu-Qt) post on FoxDeploy
+
 
 <content below from readme.txt file from template source>
 
