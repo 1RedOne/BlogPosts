@@ -1,3 +1,8 @@
+#Content here relates to the 'Building Better PowerShell Dashboards' post on FoxDeploy
+http://wp.me/p3Q7Nu-Qt
+
+<content below from readme.txt file from template source>
+
 Phantom by HTML5 UP
 html5up.net | @n33co
 Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
