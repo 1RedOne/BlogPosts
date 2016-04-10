@@ -1,5 +1,8 @@
 #Content here relates to the [Building Better PowerShell Dashboards](http://wp.me/p3Q7Nu-Qt) post on FoxDeploy
 
+If you're coming here from the blog post, you want this file, the completed code:
+
+[---FoxDeploy VM Dashboard\VMDashboard.ps1](https://github.com/1RedOne/BlogPosts/blob/master/FoxDeploy%20VM%20Dashboard/VMDashboard.ps1)
 
 <content below from readme.txt file from template source>
 
