@@ -5,6 +5,8 @@ $newRunspace.ThreadOptions = "ReuseThread"
 $newRunspace.Open()
 $newRunspace.SessionStateProxy.SetVariable("syncHash",$syncHash)
 
+# Load WPF assembly if necessary
+[void][System.Reflection.Assembly]::LoadWithPartialName('presentationframework')
 
 $psCmd = [PowerShell]::Create().AddScript({
     [xml]$xaml = @"
@@ -36,9 +38,9 @@ $psCmd = [PowerShell]::Create().AddScript({
 
 
     $reader=(New-Object System.Xml.XmlNodeReader $xaml)
-    $syncHash.Window=[Windows.Markup.XamlReader]::Load( $reader )
     
-    [void][System.Reflection.Assembly]::LoadWithPartialName('presentationframework')
+    $syncHash.Window=[Windows.Markup.XamlReader]::Load( $reader )
+
     [xml]$XAML = $xaml
         $xaml.SelectNodes("//*[@*[contains(translate(name(.),'n','N'),'Name')]]") | %{
         #Find all of the form types and add them as members to the synchash
