@@ -1,2 +1,2 @@
 # BlogPosts
-Storage for old blog posts
+Storage for blog posts
