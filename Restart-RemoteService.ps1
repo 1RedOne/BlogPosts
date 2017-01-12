@@ -1,7 +1,7 @@
 
 Function Restart-RemoteService{
 [CmdletBinding()]
-Param($computername=$env:COMPUTERNAME)
+Param($ComputerName=$env:COMPUTERNAME)
     DynamicParam {
     
             # Set the dynamic parameters' name
@@ -42,11 +42,11 @@ Param($computername=$env:COMPUTERNAME)
     process {
        
   ForEach($machine in $computername){
-    write-host "Stopping service $service..." -NoNewline 
+    write-host "Stopping service $service on host $machine..." -NoNewline 
     Get-WmiObject -ClassName Win32_Service -ComputerName $machine | Where Name -eq $service | % StopService | Out-Null
     write-host "[OK]" -ForegroundColor Cyan
 
-    Write-Host "Starting Service $service..." -NoNewline
+    Write-Host "Starting Service $service on host $machine..." -NoNewline
     Get-WmiObject -ClassName Win32_Service -ComputerName $machine | Where Name -eq $service | % StartService | Out-Null
     write-host "[OK]" -ForegroundColor Cyan
     }
