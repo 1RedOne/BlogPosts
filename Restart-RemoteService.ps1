@@ -36,11 +36,11 @@ Param($ComputerName=$env:COMPUTERNAME)
 
     begin {
         # Bind the parameter to a friendly variable
-        $Path = $PsBoundParameters[$ParameterName]
+        $Service = $PsBoundParameters[$ParameterName]
     }
 
     process {
-       
+      Write-Debug 'ham' 
   ForEach($machine in $computername){
     write-host "Stopping service $service on host $machine..." -NoNewline 
     Get-WmiObject -ClassName Win32_Service -ComputerName $machine | Where Name -eq $service | % StopService | Out-Null
