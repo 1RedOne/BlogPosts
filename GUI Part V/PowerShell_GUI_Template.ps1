@@ -36,7 +36,21 @@ $psCmd = [PowerShell]::Create().AddScript({
 </Window>
 "@
 
+    # Remove XML attributes that break a couple things.
+    #   Without this, you must manually remove the attributes
+    #   after pasting from Visual Studio. If more attributes
+    #   need to be removed automatically, add them below.
+    $AttributesToRemove = @(
+        'x:Class',
+        'mc:Ignorable'
+    )
 
+    foreach ($Attrib in $AttributesToRemove) {
+        if ( $xaml.Window.GetAttribute($Attrib) ) {
+             $xaml.Window.RemoveAttribute($Attrib)
+        }
+    }
+    
     $reader=(New-Object System.Xml.XmlNodeReader $xaml)
     
     $syncHash.Window=[Windows.Markup.XamlReader]::Load( $reader )
