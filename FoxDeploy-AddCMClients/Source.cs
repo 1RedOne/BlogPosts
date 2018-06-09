@@ -25,8 +25,11 @@ namespace SimulateClient
 
             string DomainName = "FoxDeploy.local";
             string MPHostname = "SCCM.FoxDeploy.local";
-            string ClientName = "FoxDeployTest2";
+            String machineName = System.Environment.MachineName;
+            Console.WriteLine(machineName);
 
+            string ClientName = System.Environment.MachineName;
+            Console.WriteLine("Connecting from " + ClientName);
             SimulateClient(MPHostname, ClientName, DomainName);
 
         }
@@ -57,7 +60,8 @@ namespace SimulateClient
                 registrationRequest.NetBiosName = ClientName;
                 registrationRequest.AgentIdentity = "MySampleApp";
 
-
+                Console.WriteLine("About to try to register");
+                
                 // Register client and wait for a confirmation with the SMSID
 
                 SmsClientId clientId = registrationRequest.RegisterClient(sender, TimeSpan.FromMinutes(5));
@@ -68,9 +72,11 @@ namespace SimulateClient
 
                 // Add necessary discovery data
                 ddrMessage.SmsId = clientId;
-                ddrMessage.ADSiteName = "MyADSite";
+                ddrMessage.ADSiteName = "Default-First-Site-Name"; //Changed from 'My-AD-SiteName
                 ddrMessage.SiteCode = "F0X";
                 ddrMessage.DomainName = DomainName;
+                Console.WriteLine("ddrSettings SiteCode:" + ddrMessage.SiteCode);
+                
 
                 // Now create inventory records from the discovered data (optional)
                 ddrMessage.Discover();
