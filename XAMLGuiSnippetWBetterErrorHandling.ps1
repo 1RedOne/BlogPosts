@@ -1,17 +1,16 @@
-    #ERASE ALL THIS AND PUT XAML BELOW between the @" "@ 
+#Your XAML goes here :)
 $inputXML = @"
-<Window x:Class="WpfApplication2.MainWindow"
- xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
- xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
- xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
- xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
- xmlns:local="clr-namespace:WpfApplication2"
- mc:Ignorable="d"
- Title="FoxDeploy Awesome Tool" Height="416.794" Width="598.474" Topmost="True">
- <Grid Margin="0,0,45,0">
- </Grid>
+<Window x:Class="Azure.Window1" 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:local="clr-namespace:Azure" 
+    mc:Ignorable="d" 
+    Title="FoxDeploy Awesome GUI" Height="524.256" Width="332.076">
+    <Grid Margin="0,0,174,0">
+    </Grid>
 </Window>
- 
 "@ 
  
 $inputXML = $inputXML -replace 'mc:Ignorable="d"','' -replace "x:N",'N' -replace '^<Win.*', '<Window'
