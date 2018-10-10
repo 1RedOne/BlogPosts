@@ -1,0 +1,7 @@
+C:\Users\Stephen\source\repos\MVCDemo\MVCDemo\bin\ApplicationInsights.config
+C:\Users\Stephen\source\repos\MVCDemo\MVCDemo\bin\MVCDemo.dll.config
+C:\Users\Stephen\source\repos\MVCDemo\MVCDemo\bin\MVCDemo.dll
+C:\Users\Stephen\source\repos\MVCDemo\MVCDemo\bin\MVCDemo.pdb
+C:\Users\Stephen\source\repos\MVCDemo\MVCDemo\obj\Debug\MVCDemo.csproj.CoreCompileInputs.cache
+C:\Users\Stephen\source\repos\MVCDemo\MVCDemo\obj\Debug\MVCDemo.dll
+C:\Users\Stephen\source\repos\MVCDemo\MVCDemo\obj\Debug\MVCDemo.pdb

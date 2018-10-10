@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MVCDemoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'MVCDemo.dbo.books' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="books">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="smallint" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="33" />
+    <Property Name="author" Type="varchar" MaxLength="14" />
+    <Property Name="format" Type="varchar" MaxLength="10" />
+    <Property Name="price" Type="real" />
+  </EntityType>
+  <EntityContainer Name="MVCDemoModelStoreContainer">
+    <EntitySet Name="books" EntityType="Self.books" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [books].[id] AS [id], 
+    [books].[title] AS [title], 
+    [books].[author] AS [author], 
+    [books].[format] AS [format], 
+    [books].[price] AS [price]
+    FROM [dbo].[books] AS [books]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>
