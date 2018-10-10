@@ -46,23 +46,35 @@ Fire up Visual Studio and open up the SLN file attached.
 
 Next, right-click **Models** and choose **Add-->New ADO.Net Entity Data Model**.
 
-[!]('img/Add Ado EF.png')
+![Adding the entity Model](img/AddAdoEF.png)
 Name this Model **MVCDemo**.
 
 Select **EF Designer From Database**
-
+![Choose](img/SelectingEf.png)
 Click **New Connection**.  
 
+![Choose](img/new_connection.png)
 If you're using SQLExpress, input these values:
 
 Server Name : **localhost\SQLExpress**
 
 Select or enter a database name: **MVCDemo**
 
+![Choose](img/SelectDB.png)
+
 Click **Test Connection** and if it works, then click **OK**, and **Next**.
 
 Select **EF Framework 6.0**
 
 Finally, click expand down to **Tables-->DBO->books** and click **Finish**.
+![Choose](img/autogenerate_model.png)
 
-Now, click Build and then hit F5!  Now, try to click **Books** to see the Entity Framework in action!  You're now ready to tag along for the rest of the series.
+The moment of truth, hit F5! 
+
+![Choose](img/Working!.png)
+
+Now, try to click **Books** to see the Entity Framework in action!  You're now ready to tag along for the rest of the series.
+
+![Choose](img/list_of_books.png)
+
+
