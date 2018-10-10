@@ -1,2 +1,0 @@
-c:\users\stephen\documents\visual studio 2015\Projects\ProgressBarTest\ProgressBarTest\bin\Debug\ProgressBarTest.exe.config
-C:\Users\sred1\Dropbox\Docs\blog\VIsualSutiod\project\ProgressBarTest\ProgressBarTest\bin\Debug\ProgressBarTest.exe.config
