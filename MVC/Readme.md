@@ -1,5 +1,9 @@
 Follow these steps to follow along with the blog post 'MVC Excursions' on FoxDeploy.
 
+### Clone this repo
+
+    git clone -b MVC https://github.com/1RedOne/BlogPosts.git 
+
 ### Setup SQL
 
 Use SQL Express or Standard (or Datacenter if you're made of cash) and create a new DB called `MVCDemo`.  Then run this script to create our table and populate it with data.
