@@ -1,27 +1,30 @@
-﻿$xamlPath = "$($PSScriptRoot)\$((split-path $PSCommandPath -Leaf ).Split(".")[0]).xaml"
+﻿[void][System.Reflection.Assembly]::LoadWithPartialName('presentationframework')
+
+$xamlPath = "$($PSScriptRoot)\$((split-path $PSCommandPath -Leaf ).Split(".")[0]).xaml"
 "looking to load XAML for $xamlPath, from $PSScriptRoot"
 
 if (-not(Test-Path $xamlPath)){
     throw "Ensure that $xamlPath is present within $PSScriptRoot"
 }
 $inputXML = Get-Content $xamlPath
- 
+
 $inputXML = $inputXML -replace 'mc:Ignorable="d"','' -replace "x:N",'N' -replace '^<Win.*', '<Window'
-[void][System.Reflection.Assembly]::LoadWithPartialName('presentationframework')
+
 [xml]$XAML = $inputXML
-#Read XAML
   
-    $reader=(New-Object System.Xml.XmlNodeReader $xaml) 
-  try{$Form=[Windows.Markup.XamlReader]::Load( $reader )}
+$reader=(New-Object System.Xml.XmlNodeReader $xaml) 
+  try{
+    $Form=[Windows.Markup.XamlReader]::Load( $reader )
+    }
 catch [System.Management.Automation.MethodInvocationException] {
     Write-Warning "We ran into a problem with the XAML code.  Check the syntax for this control..."
     write-host $error[0].Exception.Message -ForegroundColor Red
     if ($error[0].Exception.Message -like "*button*"){
         write-warning "Ensure your &lt;button in the `$inputXML does NOT have a Click=ButtonClick property.  PS can't handle this`n`n`n`n"}
 }
-catch{#if it broke some other way <span class="wp-smiley wp-emoji wp-emoji-bigsmile" title=":D">:D</span>
+catch{
     Write-Host "Unable to load Windows.Markup.XamlReader. Double-check syntax and ensure .net is installed."
-        }
+}
   
 #===========================================================================
 # Store Form Objects In PowerShell
