@@ -36,19 +36,10 @@ get-variable WPF*
 }
   
 Get-FormVariables
-  
-#===========================================================================
-# Use this space to add code to the various form elements in your GUI
-#===========================================================================
 
 function loadListView(){
-    #$items = $WPFdevice_listView.Items
-    #forEach($item in $items){
-    #    $WPFdevice_listView.Items.Remove($item)
-    #}
     $global:deviceList = new-object -TypeName System.Collections.ArrayList    
     $devices = import-csv "$PSScriptRoot\devices.csv" | Sort-Object Processed
-    #\temp\blog\devices.csv
     ForEach($device in $devices){        
         $global:deviceList.Add($device)
     }
@@ -61,9 +52,6 @@ function cancelButton(){
     $wpflabelCounter.Text="Reset"
     }
 
-
-
-
 $wpfdeviceTextbox.Add_TextChanged({
     if ($wpfdeviceTextbox.Text.Length -le 5){
         return 
@@ -75,20 +63,12 @@ $wpfdeviceTextbox.Add_TextChanged({
 })
 
 $WPFCancel.Add_Click({
-    cancelButton
-    #$WPFok.IsEnabled = $false
-    #$wpfdeviceTextbox.Text = $null 
-    #$wpflabelCounter.Text="Reset"
+    cancelButton    
 })
 
 
 $WPFok.Add_Click({
-    
-    $deviceTextbox = $wpfdeviceTextbox.Text.Split(',').Split([System.Environment]::NewLine).Where({$_.Length -ge 3})
-    #$outArray = new-object -TypeName System.Collections.ArrayList
-    #$outArray.AddRange($deviceTextbox)
-    #$deviceList.A
-
+    $deviceTextbox = $wpfdeviceTextbox.Text.Split(',').Split([System.Environment]::NewLine).Where({$_.Length -ge 3})    
     ForEach($item in $deviceTextbox){
         $global:deviceList.Add([pscustomObject]@{HostName=$item})
     }    
@@ -96,9 +76,6 @@ $WPFok.Add_Click({
     cancelButton
     loadListView
 })
+
 loadListView
-write-host "To show the form, run the following" -ForegroundColor Cyan
 $Form.ShowDialog() | out-null
-  
-  
-  
