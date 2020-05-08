@@ -1,15 +1,11 @@
 ﻿[void][System.Reflection.Assembly]::LoadWithPartialName('presentationframework')
 
 $xamlPath = "$($PSScriptRoot)\$((split-path $PSCommandPath -Leaf ).Split(".")[0]).xaml"
-"looking to load XAML for $xamlPath, from $PSScriptRoot"
-
 if (-not(Test-Path $xamlPath)){
     throw "Ensure that $xamlPath is present within $PSScriptRoot"
 }
 $inputXML = Get-Content $xamlPath
-
 $inputXML = $inputXML -replace 'mc:Ignorable="d"','' -replace "x:N",'N' -replace '^<Win.*', '<Window'
-
 [xml]$XAML = $inputXML
   
 $reader=(New-Object System.Xml.XmlNodeReader $xaml) 
